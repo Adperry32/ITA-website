@@ -1,0 +1,94 @@
+/* styles.css */
+
+/* Basic reset to remove default margin and padding from all elements and set box-sizing to border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the body element */
+body {
+    font-family: Arial, sans-serif;  /* Set the font style for the entire page */
+    background-color: #FAFAFA;  /* Light grey background for readability */
+    color: #333;  /* Dark grey text for readability */
+}
+
+/* Styling for the header section, including logo and navigation */
+header {
+    display: flex;  /* Align logo and navigation in a row */
+    justify-content: space-between;  /* Space out the logo and nav links */
+    align-items: center;  /* Vertically align the items in the header */
+    padding: 1em;  /* Add some padding for spacing */
+    background: linear-gradient(90deg, #FF7F3F, #FF4500);  /* Orange gradient background for the header */
+    color: #fff;  /* White text color for contrast */
+}
+
+/* Styling for navigation links */
+nav a {
+    color: #fff;  /* White text color for links */
+    text-decoration: none;  /* Remove underline from links */
+    margin: 0 10px;  /* Add horizontal spacing between links */
+}
+
+/* Styling for navigation links on hover */
+nav a:hover {
+    color: #FFB6B6;  /* Lighter orange color for hover effect */
+    text-decoration: underline;  /* Underline link text on hover */
+}
+
+/* Styling for the company logo */
+.logo {
+    inline-size: 100px;  /* Set width of the logo */
+    block-size:  auto;  /* Maintain aspect ratio of the logo */
+    animation: spin 5s linear infinite;  /* Apply full rotation spin animation to logo */
+}
+
+/* Keyframes for the flip animation applied to the logo */
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+/* Styling for the main content section */
+main {
+    padding: 2em;  /* Add padding for spacing around main content */
+    animation: fadeIn 1.5s ease-in;  /* Apply fade-in animation to main content */
+}
+
+/* Keyframes for fade-in effect used in the main content */
+@keyframes fadeIn {
+    from { opacity: 0; }  /* Start with full transparency */
+    to { opacity: 1; }  /* End with full opacity */
+}
+
+/* Styling for buttons on the website */
+button {
+    background: linear-gradient(90deg, #7F00FF, #BF40BF);  /* Purple gradient for button background */
+    color: #fff;  /* White text color for contrast */
+    border: none;  /* Remove default border */
+    padding: 10px 20px;  /* Add padding for button size */
+    cursor: pointer;  /* Change cursor to pointer when hovering over button */
+    transition: background 0.3s ease;  /* Smooth transition effect for background change */
+}
+
+/* Styling for button on hover */
+button:hover {
+    background: #FF7F3F;  /* Change button background to orange gradient on hover */
+}
+
+/* Styling for the footer section */
+footer {
+    padding: 1em;  /* Add padding for spacing */
+    text-align: center;  /* Center-align the text in the footer */
+    background-color: #FF4500;  /* Solid orange background for the footer */
+    color: #fff;  /* White text color for contrast */
+}
