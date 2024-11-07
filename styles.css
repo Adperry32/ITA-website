@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Basic reset to remove default margin and padding from all elements and set box-sizing to border-box */
 * {
     margin: 0;
@@ -12,56 +10,83 @@ body {
     font-family: Arial, sans-serif;  /* Set the font style for the entire page */
     background-color: #FAFAFA;  /* Light grey background for readability */
     color: #333;  /* Dark grey text for readability */
+    text-align: center;  /* Center-align text for headings and main content */
+    min-block-size: 100vh;  /* Ensure the body takes up at least the full height of the viewport */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Styling for the header section, including logo and navigation */
 header {
     display: flex;  /* Align logo and navigation in a row */
-    justify-content: space-between;  /* Space out the logo and nav links */
-    align-items: center;  /* Vertically align the items in the header */
-    padding: 1em;  /* Add some padding for spacing */
-    background: linear-gradient(90deg, #FF7F3F, #FF4500);  /* Orange gradient background for the header */
+    justify-content: space-between;  /* Space out the logos and navigation */
+    padding: 0.1em 1em;  /* Adjust padding to make the header area thinner and create some space on the sides */
+    background: linear-gradient(90deg, #6B5B95, #FEB236);  /* Gradient background with complementary colors */
     color: #fff;  /* White text color for contrast */
+}
+
+/* Styling for the logo containers */
+.logo-container {
+    display: flex;
+    align-items: center;  /* Vertically align the logo within the container */
+    justify-content: center;
+    flex: 0 0 auto;  /* Prevent the logo containers from growing or shrinking */
+}
+
+/* Styling for the logos */
+.logo {
+    animation: smoothFlip 5s linear infinite;  /* Apply smooth flipping animation to logos with slower speed */
+    transform-style: preserve-3d;  /* Preserve 3D effect for smooth flipping */
+    inline-size: 150px;  /* Set a consistent inline size for both logos */
+    block-size: 100px;  /* Set a consistent block size for both logos */
+    margin: 0 10px;  /* Add margin to create a buffer between the logo and its container edges */
+    flex-shrink: 0;  /* Prevent logos from shrinking */
+}
+
+/* Styling for the navigation container */
+nav {
+    display: flex;  /* Set navigation links to display in a row */
+    justify-content: space-around;  /* Distribute navigation links evenly */
+    align-items: flex-end;  /* Align navigation links towards the bottom of the header */
+    flex: 1;  /* Allow navigation to take up available space for proper centering */
 }
 
 /* Styling for navigation links */
 nav a {
     color: #fff;  /* White text color for links */
     text-decoration: none;  /* Remove underline from links */
-    margin: 0 10px;  /* Add horizontal spacing between links */
+    margin: 0 20px;  /* Add horizontal spacing between links */
+    padding: 10px;  /* Increase padding to make the links more clickable and visually balanced */
+    transition: opacity 0.3s ease, border 0.3s ease;  /* Smooth transition effect for opacity and border changes */
+}
+
+/* Styling for navigation links when active */
+nav a.active {
+    opacity: 0.5;  /* Make active link semi-transparent */
+    border: 2px solid #fff;  /* Add a white rectangle border to show active page */
 }
 
 /* Styling for navigation links on hover */
 nav a:hover {
-    color: #FFB6B6;  /* Lighter orange color for hover effect */
+    color: #FFDAB9;  /* Lighter peach color for hover effect */
     text-decoration: underline;  /* Underline link text on hover */
 }
 
-/* Styling for the company logo */
-.logo {
-    inline-size: 100px;  /* Set width of the logo */
-    block-size:  auto;  /* Maintain aspect ratio of the logo */
-    animation: spin 5s linear infinite;  /* Apply full rotation spin animation to logo */
-}
-
-/* Keyframes for the flip animation applied to the logo */
-@keyframes flip {
-    0% {
-        transform: rotateY(0deg);
+/* Keyframes for the smooth flipping animation applied to the logo */
+@keyframes smoothFlip {
+    from {
+        transform: rotateY(0deg);  /* Start from 0 degrees rotation */
     }
-    50% {
-        transform: rotateY(180deg);
-    }
-    100% {
-        transform: rotateY(360deg);
+    to {
+        transform: rotateY(360deg);  /* End at 360 degrees rotation for a full circle */
     }
 }
-
 
 /* Styling for the main content section */
 main {
     padding: 2em;  /* Add padding for spacing around main content */
     animation: fadeIn 1.5s ease-in;  /* Apply fade-in animation to main content */
+    flex: 1;  /* Allow the main content to take up remaining space */
 }
 
 /* Keyframes for fade-in effect used in the main content */
@@ -89,6 +114,9 @@ button:hover {
 footer {
     padding: 1em;  /* Add padding for spacing */
     text-align: center;  /* Center-align the text in the footer */
-    background-color: #FF4500;  /* Solid orange background for the footer */
+    background-color: #FEB236;  /* New footer background color that complements the logo */
     color: #fff;  /* White text color for contrast */
+    margin-block-start: auto;  /* Push the footer to the bottom of the page */
+    position: relative;
+    inline-size: 100%;
 }
