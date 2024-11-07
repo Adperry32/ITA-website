@@ -20,10 +20,10 @@ body {
 header {
     display: grid;  /* Use grid layout for the header */
     grid-template-columns: auto 1fr auto;  /* Three columns: left logo, navigation, right logo */
-    padding: 0.3em 1em;  /* Adjust padding */
+    padding: 0.2em 0.5em;  /* Adjust padding */
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, #6B5B95, #FEB236);  /* Gradient background */
+    background: linear-gradient(120deg, #6B5B95, #FEB236);  /* Gradient background */
     color: #fff;  /* White text color */
 }
 
@@ -88,10 +88,10 @@ nav a:hover {
 
 /* Styling for the main content section */
 main {
-    padding: 2em;  /* Spacing */
-    animation: fadeIn 1.5s ease-in;  /* Fade-in animation */
     display: grid;
-    place-items: center;
+    grid-row: inherit;
+    animation: fadeIn 1.5s ease-in;  /* Fade-in animation */
+    padding: 2em;  /* Add some padding if needed */
 }
 
 /* Keyframes for fade-in effect */
@@ -123,6 +123,7 @@ footer {
     color: #fff;
     margin-block-start: auto;
     inline-size: 100%;
+    background: linear-gradient(90deg, #6B5B95, #FEB236);  /* Gradient background */
 }
 
 /* Responsive design for screens 768px and below */
@@ -166,3 +167,47 @@ footer {
         padding: 8px 16px;  /* Adjust button size */
     }
 }
+
+h1 {
+    padding: 0;
+    font-size: 4.5rem;  /* Adjust the size as needed */
+    font-family: 'Poppins', sans-serif;  /* Change font style (use any desired font) */
+    font-weight: bold;  /* Make the font bold */
+    background: linear-gradient(90deg, #6B5B95, #FEB236, #7F00FF, #E100FF, #6B5B95);  /* Gradient background */
+    background-size: 300% 100%;  /* Increase background size for smoother transition */
+    background-clip: text;  /* Clip background to text */
+    -webkit-background-clip: text;  /* For Webkit browsers */
+    -webkit-text-fill-color: transparent;  /* Make the text fill transparent */
+    animation: gradientFlowText 10s infinite linear;  /* Apply the gradient animation */
+    margin-block-start: 10px;  /* Move the banner up */
+    margin-block-end: 5px;  /* Space between the banner and the sentence */
+    text-align: center;  /* Center the text */
+    display: block;
+    overflow: hidden;
+}
+
+/* Styling for the sentence underneath */
+h2 {
+    font-size: 1.5rem;  /* Adjust font size */
+    font-family: 'Poppins', sans-serif;  /* Match the font style to the banner */
+    color: #333;  /* Dark grey color */
+    margin-block-start: 10px;
+    margin-block-end: 30px;  /* Add margin below for spacing */
+     /* Center-align the text */
+}
+
+
+/* Keyframes for the flowing gradient on text */
+@keyframes gradientFlowText {
+    0% {
+        background-position: 0% 50%;  /* Start position */
+    }
+    50% {
+        background-position: 100% 50%;  /* Midpoint position */
+    }
+    100% {
+        background-position: 0% 50%;  /* End position to loop */
+    }
+}
+
+
