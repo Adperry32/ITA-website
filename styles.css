@@ -12,111 +12,157 @@ body {
     color: #333;  /* Dark grey text for readability */
     text-align: center;  /* Center-align text for headings and main content */
     min-block-size: 100vh;  /* Ensure the body takes up at least the full height of the viewport */
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 80px 1fr auto;  /* Header, main content, footer layout */
 }
 
 /* Styling for the header section, including logo and navigation */
 header {
-    display: flex;  /* Align logo and navigation in a row */
-    justify-content: space-between;  /* Space out the logos and navigation */
-    padding: 0.1em 1em;  /* Adjust padding to make the header area thinner and create some space on the sides */
-    background: linear-gradient(90deg, #6B5B95, #FEB236);  /* Gradient background with complementary colors */
-    color: #fff;  /* White text color for contrast */
+    display: grid;  /* Use grid layout for the header */
+    grid-template-columns: auto 1fr auto;  /* Three columns: left logo, navigation, right logo */
+    padding: 0.3em 1em;  /* Adjust padding */
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #6B5B95, #FEB236);  /* Gradient background */
+    color: #fff;  /* White text color */
 }
 
 /* Styling for the logo containers */
 .logo-container {
-    display: flex;
-    align-items: center;  /* Vertically align the logo within the container */
-    justify-content: center;
-    flex: 0 0 auto;  /* Prevent the logo containers from growing or shrinking */
+    display: grid;
+    place-items: center;  /* Center-align the logo */
 }
 
 /* Styling for the logos */
 .logo {
-    animation: smoothFlip 5s linear infinite;  /* Apply smooth flipping animation to logos with slower speed */
-    transform-style: preserve-3d;  /* Preserve 3D effect for smooth flipping */
-    inline-size: 150px;  /* Set a consistent inline size for both logos */
-    block-size: 100px;  /* Set a consistent block size for both logos */
-    margin: 0 10px;  /* Add margin to create a buffer between the logo and its container edges */
-    flex-shrink: 0;  /* Prevent logos from shrinking */
+    animation: smoothFlip 5s linear infinite;  /* Smooth flipping animation */
+    transform-style: preserve-3d;  /* Preserve 3D effect */
+    inline-size: 150px;  /* Set width as a percentage of the container */
+    block-size: 120px;  /* Maintain aspect ratio */
+    max-block-size: 80px;  /* Ensure uniform maximum height */
+    object-fit: contain;  /* Prevent distortion */
+    margin: 0 10px;  /* Margin for spacing */
 }
 
 /* Styling for the navigation container */
 nav {
-    display: flex;  /* Set navigation links to display in a row */
-    justify-content: space-around;  /* Distribute navigation links evenly */
-    align-items: flex-end;  /* Align navigation links towards the bottom of the header */
-    flex: 1;  /* Allow navigation to take up available space for proper centering */
+    display: grid;  /* Ensure navigation is a grid */
+    grid-auto-flow: column;  /* Arrange links in a row */
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));  /* Ensure each link fits */
+    justify-content: space-around;  /* Distribute navigation links */
+    align-items: center;  /* Center navigation items vertically */
+    block-size: 100%;  /* Make sure it takes full header height */
+    padding: 0;  /* Remove additional padding to fit within header */
 }
 
 /* Styling for navigation links */
 nav a {
-    color: #fff;  /* White text color for links */
-    text-decoration: none;  /* Remove underline from links */
-    margin: 0 20px;  /* Add horizontal spacing between links */
-    padding: 10px;  /* Increase padding to make the links more clickable and visually balanced */
-    transition: opacity 0.3s ease, border 0.3s ease;  /* Smooth transition effect for opacity and border changes */
+    color: #fff;  /* White text color */
+    text-decoration: none;  /* Remove underline */
+    margin: 0 15px;  /* Horizontal spacing */
+    padding: 8px;  /* Padding */
+    transition: opacity 0.3s ease, border 0.3s ease;  /* Smooth transition */
 }
 
 /* Styling for navigation links when active */
 nav a.active {
-    opacity: 0.5;  /* Make active link semi-transparent */
-    border: 2px solid #fff;  /* Add a white rectangle border to show active page */
+    opacity: 0.5;  /* Semi-transparent */
+    border: 2px solid #fff;  /* White border */
 }
 
 /* Styling for navigation links on hover */
 nav a:hover {
-    color: #FFDAB9;  /* Lighter peach color for hover effect */
-    text-decoration: underline;  /* Underline link text on hover */
+    color: #FFDAB9;  /* Peach color */
+    text-decoration: underline;  /* Underline on hover */
 }
 
-/* Keyframes for the smooth flipping animation applied to the logo */
+/* Keyframes for the smooth flipping animation */
 @keyframes smoothFlip {
     from {
-        transform: rotateY(0deg);  /* Start from 0 degrees rotation */
+        transform: rotateY(0deg);
     }
     to {
-        transform: rotateY(360deg);  /* End at 360 degrees rotation for a full circle */
+        transform: rotateY(360deg);
     }
 }
 
 /* Styling for the main content section */
 main {
-    padding: 2em;  /* Add padding for spacing around main content */
-    animation: fadeIn 1.5s ease-in;  /* Apply fade-in animation to main content */
-    flex: 1;  /* Allow the main content to take up remaining space */
+    padding: 2em;  /* Spacing */
+    animation: fadeIn 1.5s ease-in;  /* Fade-in animation */
+    display: grid;
+    place-items: center;
 }
 
-/* Keyframes for fade-in effect used in the main content */
+/* Keyframes for fade-in effect */
 @keyframes fadeIn {
-    from { opacity: 0; }  /* Start with full transparency */
-    to { opacity: 1; }  /* End with full opacity */
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Styling for buttons on the website */
+/* Styling for buttons */
 button {
-    background: linear-gradient(90deg, #7F00FF, #BF40BF);  /* Purple gradient for button background */
-    color: #fff;  /* White text color for contrast */
-    border: none;  /* Remove default border */
-    padding: 10px 20px;  /* Add padding for button size */
-    cursor: pointer;  /* Change cursor to pointer when hovering over button */
-    transition: background 0.3s ease;  /* Smooth transition effect for background change */
+    background: linear-gradient(90deg, #7F00FF, #BF40BF);  /* Gradient */
+    color: #fff;  /* White text */
+    border: none;
+    padding: 10px 20px;  /* Padding */
+    cursor: pointer;  /* Pointer cursor */
+    transition: background 0.3s ease;
 }
 
 /* Styling for button on hover */
 button:hover {
-    background: #FF7F3F;  /* Change button background to orange gradient on hover */
+    background: #FF7F3F;  /* Orange */
 }
 
-/* Styling for the footer section */
+/* Styling for the footer */
 footer {
-    padding: 1em;  /* Add padding for spacing */
-    text-align: center;  /* Center-align the text in the footer */
-    background-color: #FEB236;  /* New footer background color that complements the logo */
-    color: #fff;  /* White text color for contrast */
-    margin-block-start: auto;  /* Push the footer to the bottom of the page */
-    position: relative;
+    padding: 1em;
+    text-align: center;
+    background-color: #FEB236;
+    color: #fff;
+    margin-block-start: auto;
     inline-size: 100%;
+}
+
+/* Responsive design for screens 768px and below */
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr;  /* Stack header elements */
+        grid-template-rows: auto auto auto;  /* Adjust header grid */
+        text-align: center;
+    }
+
+    nav {
+        grid-auto-flow: row;  /* Arrange links in a column */
+        grid-template-columns: 1fr;  /* Single-column layout */
+        padding: 1em 0;  /* Add vertical padding */
+    }
+
+    .logo {
+        inline-size: 100px;  /* Adjust width */
+        block-size: 60px;  /* Adjust height */
+    }
+
+    nav a {
+        margin: 10px 0;  /* Vertical spacing */
+        padding: 10px;  /* Increase padding */
+    }
+}
+
+/* Responsive design for screens 480px and below */
+@media (max-width: 480px) {
+    .logo {
+        inline-size: 80px;  /* Further adjust width */
+        block-size: 50px;  /* Further adjust height */
+    }
+
+    nav a {
+        margin: 5px 0;  /* Smaller spacing */
+        font-size: 14px;  /* Smaller font size */
+    }
+
+    button {
+        padding: 8px 16px;  /* Adjust button size */
+    }
 }
