@@ -1,213 +1,262 @@
-/* Basic reset to remove default margin and padding from all elements and set box-sizing to border-box */
+/* Basic resets for consistent styling across browsers */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-/* Styling for the body element */
+/* Base body styling */
 body {
-    font-family: Arial, sans-serif;  /* Set the font style for the entire page */
-    background-color: #FAFAFA;  /* Light grey background for readability */
-    color: #333;  /* Dark grey text for readability */
-    text-align: center;  /* Center-align text for headings and main content */
-    min-block-size: 100vh;  /* Ensure the body takes up at least the full height of the viewport */
-    display: grid;
-    grid-template-rows: 80px 1fr auto;  /* Header, main content, footer layout */
+    font-family: 'Poppins', sans-serif; /* Set the primary font for the page */
+    background-color: #FAFAFA; /* Light gray background color */
+    color: #333; /* Dark gray text color */
 }
 
-/* Styling for the header section, including logo and navigation */
+/* Header styling */
 header {
-    display: grid;  /* Use grid layout for the header */
-    grid-template-columns: auto 1fr auto;  /* Three columns: left logo, navigation, right logo */
-    padding: 0.2em 0.5em;  /* Adjust padding */
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(120deg, #6B5B95, #FEB236);  /* Gradient background */
-    color: #fff;  /* White text color */
+    display: flex; /* Flex layout for horizontal alignment */
+    justify-content: space-between; /* Space out elements evenly */
+    align-items: center; /* Center align items vertically */
+    background: linear-gradient(120deg, #6B5B95, #FEB236); /* Gradient background */
+    padding: 1em 2em; /* Add space inside the header */
+    color: #fff; /* White text color */
+    position: relative; /* Allow positioning adjustments */
 }
 
-/* Styling for the logo containers */
-.logo-container {
-    display: grid;
-    place-items: center;  /* Center-align the logo */
-}
-
-/* Styling for the logos */
-.logo {
-    animation: smoothFlip 5s linear infinite;  /* Smooth flipping animation */
-    transform-style: preserve-3d;  /* Preserve 3D effect */
-    inline-size: 150px;  /* Set width as a percentage of the container */
-    block-size: 120px;  /* Maintain aspect ratio */
-    max-block-size: 80px;  /* Ensure uniform maximum height */
-    object-fit: contain;  /* Prevent distortion */
-    margin: 0 10px;  /* Margin for spacing */
-}
-
-/* Styling for the navigation container */
+/* Navigation bar styling */
 nav {
-    display: grid;  /* Ensure navigation is a grid */
-    grid-auto-flow: column;  /* Arrange links in a row */
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));  /* Ensure each link fits */
-    justify-content: space-around;  /* Distribute navigation links */
-    align-items: center;  /* Center navigation items vertically */
-    block-size: 100%;  /* Make sure it takes full header height */
-    padding: 0;  /* Remove additional padding to fit within header */
+    display: flex; /* Horizontal layout */
+    gap: 20px; /* Space between navigation links */
+    align-items: center; /* Center align vertically */
+    flex-grow: 1; /* Allow nav to take up remaining space */
+    justify-content: center; /* Center navigation links */
 }
 
-/* Styling for navigation links */
 nav a {
-    color: #fff;  /* White text color */
-    text-decoration: none;  /* Remove underline */
-    margin: 0 15px;  /* Horizontal spacing */
-    padding: 8px;  /* Padding */
-    transition: opacity 0.3s ease, border 0.3s ease;  /* Smooth transition */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 0.5em 1em; /* Add space inside each link */
+    transition: background 0.3s; /* Smooth transition for background changes */
 }
 
-/* Styling for navigation links when active */
-nav a.active {
-    opacity: 0.5;  /* Semi-transparent */
-    border: 2px solid #fff;  /* White border */
-}
-
-/* Styling for navigation links on hover */
 nav a:hover {
-    color: #FFDAB9;  /* Peach color */
-    text-decoration: underline;  /* Underline on hover */
+    background: #FFDAB9; /* Peach color background on hover */
 }
 
-/* Keyframes for the smooth flipping animation */
-@keyframes smoothFlip {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
+/* Logo container and animation styling */
+.logo-container {
+    display: flex; /* Flex layout for centering */
+    align-items: center; /* Center align vertically */
 }
 
-/* Styling for the main content section */
-main {
-    display: grid;
-    grid-row: inherit;
-    animation: fadeIn 1.5s ease-in;  /* Fade-in animation */
-    padding: 2em;  /* Add some padding if needed */
+.logo {
+    inline-size: 60px; /* Set logo width */
+    animation: flip 5s linear infinite;/* Continuous flipping animation */
+}
+
+/* Keyframes for flipping animation */
+@keyframes flip {
+    0% { transform: rotateY(0); } /* Start rotation */
+    100% { transform: rotateY(360deg); } /* Complete a full rotation */
 }
 
 /* Keyframes for fade-in effect */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; } /* Start fully transparent */
+    to { opacity: 1; } /* End fully opaque */
 }
 
-/* Styling for buttons */
-button {
-    background: linear-gradient(90deg, #7F00FF, #BF40BF);  /* Gradient */
-    color: #fff;  /* White text */
-    border: none;
-    padding: 10px 20px;  /* Padding */
-    cursor: pointer;  /* Pointer cursor */
-    transition: background 0.3s ease;
+/* Hero section styling */
+.hero {
+    text-align: center; /* Center-align text */
+    padding: 4em 2em; /* Add space inside the hero section */
+    background: #EEE; /* Light gray background */
 }
 
-/* Styling for button on hover */
-button:hover {
-    background: #FF7F3F;  /* Orange */
+.hero h1 {
+    background: linear-gradient(90deg, #6B5B95, #FEB236, #7F00FF, #E100FF, #6B5B95); /* Rotating gradient background */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Make the text fill transparent */
+    animation: gradientFlowText 10s infinite linear; /* Gradient flow animation */
+    font-size: 3rem; /* Large font size */
+    background-size: 300% 100%; /* Extend background size for smooth transition */
 }
 
-/* Styling for the footer */
-footer {
-    padding: 1em;
-    text-align: center;
-    background-color: #FEB236;
-    color: #fff;
-    margin-block-start: auto;
-    inline-size: 100%;
-    background: linear-gradient(90deg, #6B5B95, #FEB236);  /* Gradient background */
+.hero p {
+    margin-block-start: 1em; /* Space above the paragraph */
+    font-size: 1.2rem; /* Font size for the paragraph */
 }
 
-/* Responsive design for screens 768px and below */
+.hero button {
+    margin-block-start: 2em; /* Space above the button */
+    padding: 0.7em 1.5em; /* Padding inside the button */
+    border: none; /* No border */
+    background: #6B5B95; /* Button background color */
+    color: #fff; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Smooth transition for background change */
+}
+
+.hero button:hover {
+    background: #7F00FF; /* Change background on hover */
+}
+
+/* Services section styling */
+.services {
+    padding: 4em 2em; /* Add space inside the section */
+    background: #FFF; /* White background */
+    text-align: center; /* Center-align text */
+}
+
+.service-container {
+    display: flex; /* Flex layout */
+    justify-content: space-around; /* Space items evenly */
+    gap: 20px; /* Space between service items */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.service-item {
+    inline-size: 300px; /* Set width of each service item */
+    background: #F3F3F3; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center-align text */
+}
+
+.service-item img {
+    inline-size: 100%; /* Full width image */
+    block-size: 200px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover the space */
+}
+
+.service-item h3 {
+    margin: 1em 0; /* Space above and below the heading */
+}
+
+.service-item p {
+    padding: 0 1em; /* Horizontal padding */
+    margin-block-end: 1em; /* Space below the paragraph */
+}
+
+/* Gallery section styling */
+.gallery {
+    padding: 4em 2em; /* Add space inside the section */
+    background: #FAFAFA; /* Light gray background */
+}
+
+.gallery-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between items */
+}
+
+.gallery-item {
+    position: relative; /* Position for overlay */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.gallery-item img {
+    inline-size: 100%; /* Full width image */
+    block-size: 200px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover the space */
+    transition: transform 0.3s; /* Smooth scale transition */
+}
+
+.gallery-item .overlay {
+    position: absolute; /* Positioned relative to gallery item */
+    inset-block-start: 0; /* Start at the top */
+    inset-inline-start: 0; /* Start at the left */
+    inline-size: 100%; /* Full width */
+    block-size: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center align content */
+    align-items: center; /* Center align content */
+    opacity: 0; /* Hidden by default */
+    color: #fff; /* White text color */
+    font-size: 1.5rem; /* Large text */
+    transition: opacity 0.3s; /* Smooth fade-in */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Contact section styling */
+#contact {
+    padding: 4em 2em; /* Add space inside the section */
+    background: #FEB236; /* Orange background */
+    color: #fff; /* White text color */
+}
+
+#contact form {
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Vertical layout */
+    gap: 1em; /* Space between form elements */
+    max-inline-size: 500px; /* Limit form width */
+    margin: 0 auto; /* Center form */
+}
+
+#contact input, #contact textarea {
+    padding: 0.7em; /* Padding inside inputs */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#contact button {
+    padding: 0.7em; /* Padding inside the button */
+    background: #6B5B95; /* Button background color */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Smooth background change */
+}
+
+#contact button:hover {
+    background: #7F00FF; /* Change background on hover */
+}
+
+/* Social media links styling */
+.social-media {
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center align links */
+    gap: 1em; /* Space between links */
+    margin-block-start: 2em; /* Space above the links */
+}
+
+.social-media a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 0.5em 1em; /* Padding inside links */
+    background: #6B5B95; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Smooth background change */
+}
+
+.social-media a:hover {
+    background: #FFDAB9; /* Change background on hover */
+}
+
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
-    header {
-        grid-template-columns: 1fr;  /* Stack header elements */
-        grid-template-rows: auto auto auto;  /* Adjust header grid */
-        text-align: center;
-    }
-
     nav {
-        grid-auto-flow: row;  /* Arrange links in a column */
-        grid-template-columns: 1fr;  /* Single-column layout */
-        padding: 1em 0;  /* Add vertical padding */
-    }
-
-    .logo {
-        inline-size: 100px;  /* Adjust width */
-        block-size: 60px;  /* Adjust height */
-    }
-
-    nav a {
-        margin: 10px 0;  /* Vertical spacing */
-        padding: 10px;  /* Increase padding */
+        flex-direction: column; /* Stack navigation links */
+        align-items: center; /* Center align links */
     }
 }
 
-/* Responsive design for screens 480px and below */
-@media (max-width: 480px) {
-    .logo {
-        inline-size: 80px;  /* Further adjust width */
-        block-size: 50px;  /* Further adjust height */
-    }
-
-    nav a {
-        margin: 5px 0;  /* Smaller spacing */
-        font-size: 14px;  /* Smaller font size */
-    }
-
-    button {
-        padding: 8px 16px;  /* Adjust button size */
-    }
-}
-
-h1 {
-    padding: 0;
-    font-size: 4.5rem;  /* Adjust the size as needed */
-    font-family: 'Poppins', sans-serif;  /* Change font style (use any desired font) */
-    font-weight: bold;  /* Make the font bold */
-    background: linear-gradient(90deg, #6B5B95, #FEB236, #7F00FF, #E100FF, #6B5B95);  /* Gradient background */
-    background-size: 300% 100%;  /* Increase background size for smoother transition */
-    background-clip: text;  /* Clip background to text */
-    -webkit-background-clip: text;  /* For Webkit browsers */
-    -webkit-text-fill-color: transparent;  /* Make the text fill transparent */
-    animation: gradientFlowText 10s infinite linear;  /* Apply the gradient animation */
-    margin-block-start: 10px;  /* Move the banner up */
-    margin-block-end: 5px;  /* Space between the banner and the sentence */
-    text-align: center;  /* Center the text */
-    display: block;
-    overflow: hidden;
-}
-
-/* Styling for the sentence underneath */
-h2 {
-    font-size: 1.5rem;  /* Adjust font size */
-    font-family: 'Poppins', sans-serif;  /* Match the font style to the banner */
-    color: #333;  /* Dark grey color */
-    margin-block-start: 10px;
-    margin-block-end: 30px;  /* Add margin below for spacing */
-     /* Center-align the text */
-}
-
-
-/* Keyframes for the flowing gradient on text */
+/* Keyframes for text gradient animation */
 @keyframes gradientFlowText {
-    0% {
-        background-position: 0% 50%;  /* Start position */
-    }
-    50% {
-        background-position: 100% 50%;  /* Midpoint position */
-    }
-    100% {
-        background-position: 0% 50%;  /* End position to loop */
-    }
+    0% { background-position: 0% 50%; } /* Start at the beginning */
+    50% { background-position: 100% 50%; } /* Move to the end */
+    100% { background-position: 0% 50%; } /* Loop back to the beginning */
 }
-
-

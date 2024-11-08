@@ -1,40 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instinctive Tech Advisors</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8"> <!-- Defines the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on different screen sizes -->
+    <title>Instinctive Tech Advisors</title> <!-- Page title displayed on the browser tab -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file for styling -->
 </head>
 <body>
-    <!-- Header and Navigation -->
+    <!-- Header Section -->
     <header>
-        <div class="logo-container left-logo">
-            <img src="images/IconOnly_Transparent.png" alt="Company Logo" class="logo">  <!-- Company logo with flipping animation left side -->
+        <!-- Left logo container -->
+        <div class="logo-container">
+            <img src="images/IconOnly_Transparent_NoBuffer.png" alt="Company Logo" class="logo"> <!-- Displays the company logo -->
         </div>
+
+        <!-- Navigation menu -->
         <nav>
-            <a href="homepage.html">Home</a>  <!-- Link to Home page -->
-            <a href="aboutpage.html">About Us</a>  <!-- Link to About Us page -->
-            <a href="services.html">Services</a>  <!-- Link to Services page -->
-            <a href="demopage.html">Product Demo</a> <!--Link to Demo page-->
-            <a href="contactuspage.html">Contact</a>  <!-- Link to Contact page -->
+            <a href="homepage.html">Home</a> <!-- Link to the homepage -->
+            <a href="aboutpage.html">About Us</a> <!-- Link to the About Us page -->
+            <a href="services.html">Services</a> <!-- Link to the Services page -->
+            <a href="contactuspage.html">Contact</a> <!-- Link to the Contact page -->
         </nav>
+
+        <!-- Right logo container -->
         <div class="logo-container right-logo">
-            <img src="images/IconOnly_Transparent.png" alt="Company Logo" class="logo">  <!-- Company logo with flipping animation right side -->
+            <img src="images/IconOnly_Transparent_NoBuffer.png" alt="Company Logo" class="logo"> <!-- Displays another company logo -->
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <h1>Instinctive Tech Advisors</h1>  <!-- Main heading for the website -->
-        <h2>Innovative Tech, Instinctive Solutions.</h2>  <!-- Short description of the company's mission -->
-    </main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Instinctive Tech Advisors</h1> <!-- Main headline for the hero section -->
+        <p>The team to trust when delivering cutting-edge solutions for your business needs.</p> <!-- Subheading or description -->
+        <button>Learn More</button> <!-- Call-to-action button -->
+    </section>
 
-    <!-- Footer with Contact Links -->
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2> <!-- Title for the services section -->
+        <div class="service-container">
+            <!-- Individual service item -->
+            <div class="service-item">
+                <img src="images/service-placeholder.jpg" alt="Service Image"> <!-- Image representing the service -->
+                <h3>Service One</h3> <!-- Title of the service -->
+                <p>Short description of the service.</p> <!-- Brief service description -->
+            </div>
+            <!-- Individual service item -->
+            <div class="service-item">
+                <img src="images/service-placeholder.jpg" alt="Service Image"> <!-- Image representing the service -->
+                <h3>Service Two</h3> <!-- Title of the service -->
+                <p>Short description of the service.</p> <!-- Brief service description -->
+            </div>
+            <!-- Additional service items can be added as needed -->
+        </div>
+    </section>
+
+    <!-- Gallery/Portfolio Section -->
+    <section class="gallery">
+        <h2>Explore Our Insights</h2> <!-- Title for the gallery section -->
+        <div class="gallery-grid">
+            <!-- Gallery item 1 -->
+            <div class="gallery-item">
+                <a href="real-estate.html">
+                    <img src="images/real-estate-placeholder.jpg" alt="Real Estate"> <!-- Image for the gallery item -->
+                    <div class="overlay"> <!-- Overlay for hover effect -->
+                        <p>Real Estate Tech Solutions</p> <!-- Text displayed on overlay -->
+                    </div>
+                </a>
+            </div>
+            <!-- Gallery item 2 -->
+            <div class="gallery-item">
+                <a href="crm.html">
+                    <img src="images/crm-placeholder.jpg" alt="CRM"> <!-- Image for the gallery item -->
+                    <div class="overlay"> <!-- Overlay for hover effect -->
+                        <p>CRM Best Practices</p> <!-- Text displayed on overlay -->
+                    </div>
+                </a>
+            </div>
+            <!-- Gallery item 3 -->
+            <div class="gallery-item">
+                <a href="hospitality-tech.html">
+                    <img src="images/hospitality-placeholder.jpg" alt="Hospitality Tech"> <!-- Image for the gallery item -->
+                    <div class="overlay"> <!-- Overlay for hover effect -->
+                        <p>Hospitality Tech Innovations</p> <!-- Text displayed on overlay -->
+                    </div>
+                </a>
+            </div>
+            <!-- Additional gallery items can be added as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <footer>
-        <p>Contact us: <a href="mailto:a.perry@instinctivetech.net">info@instinctivetech.net</a> | <a href="tel:+16783344015">+Leave a voicemail here</a></p>  <!-- Email and phone number for easy contact -->
+        <section id="contact">
+            <h2>Contact Us</h2> <!-- Title for the contact section -->
+            <form>
+                <input type="text" placeholder="Your Name" required> <!-- Input for user's name -->
+                <input type="email" placeholder="Your Email" required> <!-- Input for user's email -->
+                <textarea placeholder="Your Message" required></textarea> <!-- Text area for the user's message -->
+                <button type="submit">Send</button> <!-- Submit button for the form -->
+            </form>
+            <!-- Social media links -->
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank">Facebook</a> <!-- Link to Facebook page -->
+                <a href="https://twitter.com" target="_blank">Twitter</a> <!-- Link to Twitter profile -->
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a> <!-- Link to LinkedIn profile -->
+            </div>
+        </section>
+        <p>&copy; 2024 Instinctive Tech Advisors</p> <!-- Copyright information -->
     </footer>
 
-    <script src="script.js"></script>  <!-- Link to JavaScript file for additional interactivity -->
+    <script src="script.js"></script> <!-- Link to JavaScript file for interactive features -->
 </body>
 </html>
