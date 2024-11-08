@@ -30,6 +30,7 @@ nav {
     align-items: center; /* Center align vertically */
     flex-grow: 1; /* Allow nav to take up remaining space */
     justify-content: center; /* Center navigation links */
+    font-size: 1.2em;
 }
 
 nav a {
@@ -78,8 +79,8 @@ nav a:hover {
     -webkit-background-clip: text; /* Clip gradient to text */
     -webkit-text-fill-color: transparent; /* Make the text fill transparent */
     animation: gradientFlowText 10s infinite linear; /* Gradient flow animation */
-    font-size: 3rem; /* Large font size */
-    background-size: 300% 100%; /* Extend background size for smooth transition */
+    font-size: 3.3rem; /* Large font size */
+    background-size: 200% 100%; /* Extend background size for smooth transition */
 }
 
 .hero p {
@@ -192,9 +193,13 @@ nav a:hover {
 
 /* Contact section styling */
 #contact {
-    padding: 4em 2em; /* Add space inside the section */
+    padding: 2em 1em; /* Add space inside the section */
     background: #FEB236; /* Orange background */
     color: #fff; /* White text color */
+    max-inline-size: 50%; /* Limit contact form width to 50% */
+    margin: 0 auto 2em; /* Center form and add margin at the bottom */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 #contact form {
@@ -226,24 +231,19 @@ nav a:hover {
 }
 
 /* Social media links styling */
-.social-media {
+.social-media-icons {
     display: flex; /* Flex layout */
-    justify-content: center; /* Center align links */
-    gap: 1em; /* Space between links */
-    margin-block-start: 2em; /* Space above the links */
+    gap: 1em; /* Space between icons */
+    justify-content: center; /* Center align icons */
 }
 
-.social-media a {
-    color: #fff; /* White text color */
-    text-decoration: none; /* Remove underline */
-    padding: 0.5em 1em; /* Padding inside links */
-    background: #6B5B95; /* Background color */
-    border-radius: 5px; /* Rounded corners */
-    transition: background 0.3s; /* Smooth background change */
+.social-media-icons a img {
+    inline-size: 30px; /* Icon width */
+    block-size: 30px; /* Icon height */
+    transition: transform 0.3s; /* Smooth hover effect */
 }
-
-.social-media a:hover {
-    background: #FFDAB9; /* Change background on hover */
+.social-media-icons a img:hover {
+    transform: scale(1.2); /* Scale up on hover */
 }
 
 /* Responsive design for smaller screens */
@@ -259,4 +259,21 @@ nav a:hover {
     0% { background-position: 0% 50%; } /* Start at the beginning */
     50% { background-position: 100% 50%; } /* Move to the end */
     100% { background-position: 0% 50%; } /* Loop back to the beginning */
+}
+
+footer {
+    background: linear-gradient(120deg, #6B5B95, #FEB236); /* Gradient background */
+    color: #fff; /* White text color */
+    padding: 1em 0; /* Vertical padding */
+    text-align: center; /* Center-align text */
+}
+
+.footer-content {
+    display: block; /* Block layout to center elements vertically */
+    max-inline-size: 80%; /* Limit width */
+    margin: 0 auto; /* Center footer content */
+}
+
+.footer-content p {
+    margin-block-end: 1em; /* Space below the copyright text */
 }
