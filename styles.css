@@ -87,15 +87,6 @@ h2 {
     padding-block-end: 15px;
 }
 
-h3 {
-    background: linear-gradient(90deg, #6B5B95, #FEB236, #7F00FF, #E100FF, #6B5B95); /* Rotating gradient background */
-    -webkit-background-clip: text; /* Clip gradient to text */
-    -webkit-text-fill-color: transparent; /* Make the text fill transparent */
-    animation: gradientFlowText 10s infinite linear; /* Gradient flow animation */
-    font-size: 0.7rem;
-    background-size: 200% 100%; /* Extend background size for smooth transition */
-}
-
 .hero p {
     margin-block-start: 1em; /* Space above the paragraph */
     font-size: 1.2rem; /* Font size for the paragraph */
@@ -119,8 +110,7 @@ h3 {
 /* Services section styling */
 .services {
     background: #FFF; /* White background */
-    padding: 20px;
-    margin: 20px auto;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     transform: translateY(-10px);
@@ -142,6 +132,9 @@ h3 {
     overflow: hidden; /* Hide overflow */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     text-align: center; /* Center-align text */
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .service-item img {
@@ -150,25 +143,55 @@ h3 {
     object-fit: cover; /* Maintain aspect ratio and cover the space */
 }
 
+.service-description{
+    display: none; /* Initially hidden */
+    padding: 15px;
+    text-align: start; /* Left align the description */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
+    border-radius: 10px;
+}
+
+.service-item:hover .service-description{
+    display: block; /* Show the description on hover */
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    padding: 20px;
+    opacity: 0.9; /* Slightly transparent */
+}
+
 .service-item h3 {
+    background: linear-gradient(90deg, #6B5B95, #FEB236, #7F00FF, #E100FF, #6B5B95); /* Rotating gradient background */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Make the text fill transparent */
+    animation: gradientFlowText 10s infinite linear; /* Gradient flow animation */
+    font-size: 1rem;
+    background-size: 200% 100%; /* Extend background size for smooth transition */
     margin: 1em 0; /* Space above and below the heading */
 }
 
 .service-item p {
     padding: 0 1em; /* Horizontal padding */
     margin-block-end: 1em; /* Space below the paragraph */
+    text-align: start; /* left align the text*/
 }
 
 /* Gallery section styling */
 .gallery {
     padding: 4em 2em; /* Add space inside the section */
     background: #FAFAFA; /* Light gray background */
+    text-align: center;
+    justify-items: center;
 }
 
 .gallery-grid {
     display: grid; /* Grid layout */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between items */
+    gap: 40px; /* Space between items */
+    inline-size: 85%; /* Full width image */
+    block-size: 300px; /* Fixed height */
 }
 
 .gallery-item {
@@ -180,7 +203,7 @@ h3 {
 
 .gallery-item img {
     inline-size: 100%; /* Full width image */
-    block-size: 200px; /* Fixed height */
+    block-size: 350px; /* Fixed height */
     object-fit: cover; /* Maintain aspect ratio and cover the space */
     transition: transform 0.3s; /* Smooth scale transition */
 }
@@ -218,20 +241,28 @@ h3 {
     margin: 0 auto 2em; /* Center form and add margin at the bottom */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    inline-size: 500px; 
+    block-size: 450px;
+    justify-items: center;
 }
+
 
 #contact form {
     display: flex; /* Flex layout */
     flex-direction: column; /* Vertical layout */
-    gap: 1em; /* Space between form elements */
-    max-inline-size: 500px; /* Limit form width */
+    gap: 1.1em; /* Space between form elements */
+    max-inline-size: 420px; /* Limit form width */
     margin: 0 auto; /* Center form */
 }
 
+#contact form textarea{
+    block-size: 160px;
+}
+
 #contact input, #contact textarea {
-    padding: 0.7em; /* Padding inside inputs */
+    padding: 1em; /* Padding inside inputs */
     border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 25px; /* Rounded corners */
 }
 
 #contact button {

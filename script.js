@@ -37,3 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Error initializing the script: ", error);
     }
 });
+
+document.querySelectorAll('.service-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const description = this.querySelector('.service-description');
+        description.style.display = description.style.display === 'block' ? 'none' : 'block';
+        this.style.transform = description.style.display === 'block' ? 'translateY(0)' : 'translateY(-10px)';
+    });
+});
