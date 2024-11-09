@@ -83,6 +83,19 @@ nav a:hover {
     background-size: 200% 100%; /* Extend background size for smooth transition */
 }
 
+h2 {
+    padding-block-end: 15px;
+}
+
+h3 {
+    background: linear-gradient(90deg, #6B5B95, #FEB236, #7F00FF, #E100FF, #6B5B95); /* Rotating gradient background */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Make the text fill transparent */
+    animation: gradientFlowText 10s infinite linear; /* Gradient flow animation */
+    font-size: 0.7rem;
+    background-size: 200% 100%; /* Extend background size for smooth transition */
+}
+
 .hero p {
     margin-block-start: 1em; /* Space above the paragraph */
     font-size: 1.2rem; /* Font size for the paragraph */
@@ -105,8 +118,13 @@ nav a:hover {
 
 /* Services section styling */
 .services {
-    padding: 4em 2em; /* Add space inside the section */
     background: #FFF; /* White background */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    transition: transform 0.3s, box-shadow 0.3s;
     text-align: center; /* Center-align text */
 }
 
